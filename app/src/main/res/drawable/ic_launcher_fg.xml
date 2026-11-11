@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <group android:scaleX="0.62" android:scaleY="0.62" android:pivotX="54" android:pivotY="54">
+    <!-- pil: kommer in uppifrån vänster, studsar och far iväg uppåt höger -->
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="7" android:strokeLineCap="round"
+        android:strokeLineJoin="round" android:fillColor="#00000000"
+        android:pathData="M24,22 L48,46 L74,20 M58,20 L74,20 L74,36" />
+        <path android:fillColor="#FFFFFF" android:pathData="M15,72 C30,51 78,51 93,72 L93,80 Q93,87 86,87 L78,87 Q71,87 71,80 L71,75 C61,69 47,69 37,75 L37,80 Q37,87 30,87 L22,87 Q15,87 15,80 Z" />
+    </group>
+</vector>

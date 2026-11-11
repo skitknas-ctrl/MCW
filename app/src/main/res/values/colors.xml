@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mcw_red">#D32F2F</color>
+    <color name="mcw_idle_bg">#59000000</color>
+    <color name="mcw_idle_icon">#D9FFFFFF</color>
+    <color name="mcw_noperm">#EF6C00</color>
+</resources>

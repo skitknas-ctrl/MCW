@@ -1,0 +1,48 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Bygg APK
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon -PbuildNumber=${{ github.run_number }} assembleRelease
+          cp app/build/outputs/apk/release/app-release.apk MCW.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MCW
+          path: MCW.apk
+
+      # En ny release per bygge (v1.0.<n>) så att Obtainium ser varje bygge som en ny version.
+      # De tre senaste behålls, äldre tas bort.
+      - name: Publicera release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: v1.0.${{ github.run_number }}
+        run: |
+          for old in $(gh release list --limit 100 --json tagName --jq '.[].tagName' | grep -E '^v1\.[0-9]+\.[0-9]+$' | sort -t. -k2,2n -k3,3n -r | tail -n +3 || true); do
+            gh release delete "$old" --cleanup-tag --yes || true
+          done
+          gh release create "$VERSION" MCW.apk \
+            --latest \
+            --title "MCW $VERSION" \
+            --notes "Automatiskt bygge av commit ${GITHUB_SHA::7}."
