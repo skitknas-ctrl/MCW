@@ -10,6 +10,6 @@
         android:layout_height="match_parent"
         android:padding="6dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_missed"
+        android:src="@drawable/ic_missed_v"
         android:contentDescription="@string/state_missed" />
 </FrameLayout>

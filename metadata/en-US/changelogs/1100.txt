@@ -1,0 +1,1 @@
+First release on F-Droid. The handset now lies down in a wide widget and stands up in a tall or square one.

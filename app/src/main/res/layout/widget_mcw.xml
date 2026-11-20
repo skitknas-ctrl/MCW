@@ -12,6 +12,6 @@
         android:layout_height="match_parent"
         android:padding="6dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_idle"
+        android:src="@drawable/ic_idle_v"
         android:contentDescription="@string/state_none" />
 </FrameLayout>

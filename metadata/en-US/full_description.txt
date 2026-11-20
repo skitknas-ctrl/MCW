@@ -1,0 +1,12 @@
+Missed Call Widget (MCW) makes a missed call hard to overlook. The small missed-call symbol in the status bar is easy to miss, especially without your glasses. This widget shows the same thing in a size you choose yourself.
+
+* Red, with a handset and an arrow bouncing away, when there are missed calls you have not looked at
+* Grey and discreet when everything has been seen
+* Tap the widget to open the phone app's list of recent calls; the widget turns grey again
+* It also turns grey when you look at the calls directly in the phone app
+* Orange when the permission to read the call log is missing
+* Resizable: the handset lies down when the widget is wider than it is tall and stands up otherwise
+
+The app needs permission to read the call log, to see whether there are missed calls, and the phone state, to notice when a call ends. Nothing leaves the phone: the app has no network access, no ads and no tracking.
+
+The app's own screens are in Swedish. Requires Android 12 or later.
